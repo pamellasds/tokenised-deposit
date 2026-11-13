@@ -1,0 +1,22 @@
+meta {
+  name: Mint with EIP-712 authorization
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/mint-with-authorization
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "to": "{{holder}}",
+    "amount": "50"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

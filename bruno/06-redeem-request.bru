@@ -1,0 +1,28 @@
+meta {
+  name: Request redeem
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/redeem/request
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "holderKey": "{{holderKey}}",
+    "amount": "25"
+  }
+}
+
+script:post-response {
+  if (res.body.redeemId !== undefined) {
+    bru.setEnvVar("redeemId", String(res.body.redeemId));
+  }
+}
+
+assert {
+  res.status: eq 200
+}

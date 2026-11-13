@@ -1,0 +1,15 @@
+meta {
+  name: Events mirror
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{baseUrl}}/events
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}

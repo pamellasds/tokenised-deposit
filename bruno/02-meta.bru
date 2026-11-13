@@ -1,0 +1,16 @@
+meta {
+  name: Meta
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/meta
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.symbol: eq tDEP
+}

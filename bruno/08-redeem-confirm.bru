@@ -1,0 +1,21 @@
+meta {
+  name: Confirm redeem
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{baseUrl}}/redeem/confirm
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "{{redeemId}}"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

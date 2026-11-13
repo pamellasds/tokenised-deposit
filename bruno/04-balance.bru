@@ -1,0 +1,15 @@
+meta {
+  name: Balance after mint
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/balances/{{holder}}
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Mint
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/mint
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "to": "{{holder}}",
+    "amount": "100"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

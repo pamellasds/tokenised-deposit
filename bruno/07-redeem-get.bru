@@ -1,0 +1,16 @@
+meta {
+  name: Get redeem request
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/redeems/{{redeemId}}
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.pending: eq true
+}

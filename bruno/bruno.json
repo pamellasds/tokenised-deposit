@@ -1,0 +1,6 @@
+{
+  "version": "1",
+  "name": "tokenised-deposit",
+  "type": "collection",
+  "ignore": ["node_modules", ".git"]
+}
